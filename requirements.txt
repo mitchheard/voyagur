@@ -9,4 +9,3 @@ pystache==0.5.3
 static==1.0.2
 wsgiref==0.1.2
 newrelic==1.13.1.31
-gunicorn==17.5
