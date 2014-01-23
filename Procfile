@@ -1,1 +1,1 @@
-web: newrelic-admin run-program gunicorn bizitopen.wsgi
+web: newrelic-admin run-program gunicorn voyagur.wsgi
