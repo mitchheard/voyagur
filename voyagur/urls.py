@@ -6,6 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
+    url(r'^$', 'voyagur.views.home', name='home'),
+
     url(r'^login/$', 'auth.views.login_user'),
     # url(r'^$', 'voyagur.views.home', name='home'),
     # url(r'^voyagur/', include('voyagur.foo.urls')),
