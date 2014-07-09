@@ -1,5 +1,9 @@
 # PHP-MVC
 
+<<<<<<< HEAD
+It's not where e are, it's where u are
+Mitch Mitch
+=======
 An extremely simple and easy to understand MVC skeleton application, reduced to the max.
 Everything is **as simple as possible**, as **manually as possible** and as readable as possible.
 This project is - by intention - NOT a full framework, it's a bare-bone structure, written in
@@ -163,3 +167,4 @@ If you think this script is useful and saves you a lot of work, then think about
 
 The linked tracks in this naked application are just some of my personal favourites of the last few months.
 I think it's always a good idea to fill boring nerd-code stuff with quality culture.
+>>>>>>> develop
