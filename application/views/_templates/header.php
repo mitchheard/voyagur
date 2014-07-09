@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PHP MVC skeleton</title>
-    <meta name="description" content="">
+    <title>Voyagur: It's not where e are, it's where u are.</title>
+    <meta name="description" content="Plan a trip with friends, families, loved ones, anyone.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
@@ -17,18 +17,14 @@
 <!-- header -->
 <div class="container">
     <!-- Info -->
-    <div class="where-are-we-box">
-        Everything in this box is loaded from <span class="bold">application/views/_templates/header.php</span> !
-        <br />
-        The green line is added via JavaScript (to show how to integrate JavaScript).
-    </div>
-    <h1>The header (used on all pages)</h1>
+    <h1>Where are we going?</h1>
     <!-- demo image -->
-    <h3>Demo image, to show usage of public/img folder</h3>
+    <!--<h3>Demo image, to show usage of public/img folder</h3>
     <div>
         <img src="<?php echo URL; ?>public/img/demo-image.png" />
-    </div>
+    </div> -->
     <!-- navigation -->
+
     <h3>Demo Navigation</h3>
     <div class="navigation">
         <ul>
@@ -41,7 +37,7 @@
         </ul>
     </div>
     <!-- simple div for javascript output, just to show how to integrate js into this MVC construct -->
-    <h3>Demo JavaScript</h3>
+    <!-- <h3>Demo JavaScript</h3>
     <div id="javascript-header-demo-box">
-    </div>
+    </div> -->
 </div>
