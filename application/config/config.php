@@ -14,11 +14,6 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-/**
- * Configuration for: Project URL
- * Put your URL here, for local development "127.0.0.1" or "localhost" (plus sub-folder) is fine
- */
-define('URL', 'http://localhost:8888/');
 
 /**
  * Configuration for: Database
@@ -29,3 +24,17 @@ define('DB_HOST', 'localhost');
 define('DB_NAME', 'voyagur');
 define('DB_USER', 'code_db_user');
 define('DB_PASS', 'I3xI7PGo*Z');
+
+//This will include your local settings file to tell if local or anything else 
+if ( file_exists( dirname(__FILE__) . '/local.config.php')) {
+  include  dirname(__FILE__) .'/local.config.php';
+} else {
+	/**
+	 * Configuration for: Project URL
+	 * Put your URL here, for local development "127.0.0.1" or "localhost" (plus sub-folder) is fine
+	 */
+	//define('URL', 'http://localhost:8888/');
+	define('URL', 'http://54.187.193.163/');
+	define('IS_LOCAL', false);
+}
+
