@@ -24,6 +24,39 @@ class Home extends Controller
         require 'application/views/_templates/footer.php';
     }
 
+    public function signIn()
+    {
+        require 'application/views/home/signin.php';
+    }
+
+    public function create()
+    {
+        require 'application/views/_templates/header.php';
+        require 'application/views/home/create.php';
+        require 'application/views/_templates/footer.php';
+    }
+
+    public function modify()
+    {
+        require 'application/views/_templates/header.php';
+        require 'application/views/home/modify.php';
+        require 'application/views/_templates/footer.php';
+    }
+
+    public function about()
+    {
+        require 'application/views/_templates/header.php';
+        require 'application/views/home/about.php';
+        require 'application/views/_templates/footer.php';
+    }
+
+    public function contact()
+    {
+        require 'application/views/_templates/header.php';
+        require 'application/views/home/contact.php';
+        require 'application/views/_templates/footer.php';
+    }
+
     /**
      * PAGE: exampleone
      * This method handles what happens when you move to http://yourproject/home/exampleone
@@ -53,5 +86,5 @@ class Home extends Controller
         require 'application/views/home/example_two.php';
         require 'application/views/_templates/footer.php';
     }
-  
+
 }
