@@ -1,43 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Voyagur: It's not where e are, it's where u are.</title>
-    <meta name="description" content="Plan a trip with friends, families, loved ones, anyone.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css -->
-    <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
-    <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <!-- our JavaScript -->
-    <script src="<?php echo URL; ?>public/js/application.js"></script>
+    <meta name="description" content="Plan a trip with friends, families, loved ones, anyone.">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="<?php echo URL; ?>public/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="<?php echo URL; ?>public/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="<?php echo URL; ?>public/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo URL; ?>public/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo URL; ?>public/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo URL; ?>public/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="<?php echo URL; ?>public/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="<?php echo URL; ?>public/ico/favicon.png">
+  <!-- css -->
+  <!--<link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">-->
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <!-- our JavaScript -->
+  <script src="<?php echo URL; ?>public/js/application.js"></script>
 </head>
 <body>
-<!-- header -->
-<div class="container">
-    <!-- Info -->
-    <h1>Where are we going?</h1>
-    <!-- demo image -->
-    <!--<h3>Demo image, to show usage of public/img folder</h3>
-    <div>
-        <img src="<?php echo URL; ?>public/img/demo-image.png" />
-    </div> -->
-    <!-- navigation -->
+<div class="container-narrow">
 
-    <h3>Demo Navigation</h3>
-    <div class="navigation">
-        <ul>
-            <!-- same like "home" or "home/index" -->
-            <li><a href="<?php echo URL; ?>"><?php echo URL; ?>home</a></li>
-            <li><a href="<?php echo URL; ?>home/exampleone"><?php echo URL; ?>home/exampleone</a></li>
-            <li><a href="<?php echo URL; ?>home/exampletwo"><?php echo URL; ?>home/exampletwo</a></li>
-            <!-- "songs" and "songs/index" are the same -->
-            <li><a href="<?php echo URL; ?>songs/"><?php echo URL; ?>songs/index</a></li>
-        </ul>
+    <div class="masthead">
+      <ul class="nav nav-pills pull-right">
+        <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
+        <li><a href="<?php echo URL; ?>home/about">About</a></li>
+        <li><a href="<?php echo URL; ?>home/contact">Contact</a></li>
+      </ul>
+      <h3 class="muted">Voyagur</h3>
     </div>
-    <!-- simple div for javascript output, just to show how to integrate js into this MVC construct -->
-    <!-- <h3>Demo JavaScript</h3>
-    <div id="javascript-header-demo-box">
-    </div> -->
-</div>
+
+    <hr>

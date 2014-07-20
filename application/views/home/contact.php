@@ -1,9 +1,6 @@
 <div class="jumbotron">
-  <h1>Where to?</h1>
+  <h1>Contact</h1>
   <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo.</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="<?php echo URL; ?>home/modify">Modify a Voyage<a/></p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="<?php echo URL; ?>home/create">Create a Voyage</a></p>
-  <p><a class="" href="<?php echo URL; ?>home/signIn">Sign in</a> | <a class="" href="#">Register</a></p>
 </div>
 
 <hr>
