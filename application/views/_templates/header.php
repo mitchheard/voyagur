@@ -19,7 +19,7 @@ require_once "/var/www/html/application/krumo/class.krumo.php";
         padding-bottom: 40px;
       }
 
-      /* Custom container */
+      /* Custom container 
       .container-narrow {
         margin: 0 auto;
         max-width: 700px;
@@ -28,6 +28,7 @@ require_once "/var/www/html/application/krumo/class.krumo.php";
         margin: 30px 0;
       }
 
+      */
       /* Main marketing message and sign up button */
       .jumbotron {
         margin: 60px 0;
@@ -64,14 +65,14 @@ require_once "/var/www/html/application/krumo/class.krumo.php";
                     <link rel="apple-touch-icon-precomposed" href="<?php echo URL; ?>public/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="<?php echo URL; ?>public/ico/favicon.png">
   <!-- css -->
-  <!--<link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">-->
+  <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
   <!-- jQuery -->
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   <!-- our JavaScript -->
   <script src="<?php echo URL; ?>public/js/application.js"></script>
 </head>
 <body>
-<div class="container-narrow">
+<div class="container">
 
     <div class="masthead">
       <ul class="nav nav-pills pull-right">
