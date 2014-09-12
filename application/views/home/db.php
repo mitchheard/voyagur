@@ -14,3 +14,8 @@ krumo($voyage_main);
 echo "get main voyage object - getVoyage";
 $voyage_main = $voyage_info->getVoyage(1);
 krumo($voyage_main);
+echo "get a user profile - getUserData";
+$voyage_main = $voyage_info->getUserData(1);
+krumo($voyage_main);
+
+

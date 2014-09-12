@@ -31,12 +31,23 @@ class voyage{
 		return $holder;
 		//return self::getInfo(4);
 	}
+	public static function getUserData($user_id) {
+		$holder = self::get_user_data($user_id);
+		return $holder;
+		//return self::getInfo(4);
+	}
 	public static function get($voyage_id) {
 		return new voyage($voyage_id);
 	}
 
 	private static function get_main_voyage($voyage_id) {
 		$main_sql = "select * from voyage where id = " . $voyage_id;
+		$voyage_data = self::query($main_sql);
+		$voyage_data = $voyage_data[0];
+		return $voyage_data;
+	}
+	private static function get_user_data($user_id) {
+		$main_sql = "select * from users where id = " . $user_id;
 		$voyage_data = self::query($main_sql);
 		$voyage_data = $voyage_data[0];
 		return $voyage_data;
