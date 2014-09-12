@@ -35,7 +35,7 @@
   <form role="form" action="<?php echo URL; ?>home/addvoyage" method="POST">
     <div class="form-group">
       <label for="inputDestination">What is the name of your trip?</label>
-      <input type="text" class="form-control" name="where" value="" placeholder="Trip Name">
+      <input type="text" class="form-control" name="name" value="" placeholder="Trip Name">
     </div>
     <div class="form-group">
       <label for="inputDestination">Where do you want to go?</label>

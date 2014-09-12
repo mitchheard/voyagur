@@ -1,37 +1,13 @@
 <?php
-// get params from the URL
-
-//$trip_id = $_GET['tripid'];
-
-//$trip_id = $_GET['tripid'];
-//$voyager_id = $_GET['voyager_id'];
 
 $trip_id = 0;
 $voyager_id = 0;
 
-
-// if trip id exists
-if($trip_id) {
-
-	// $voyage_info = Voyage::get(4);
-
-	// $voyage_info = new Voyage();
-	// $voyage = $voyage_info->getVoyage($trip_id);
-	// $voyagers = $voyage_info->getVoyagers($trip_id);
-	// // TODO: php page for functions like "get leader"
-	// krumo($voyagers);
-	// krumo($voyage);
-
-	// $begin_date = date('F j, Y', strtotime($voyage->begin_date));
-	// $end_date = date('F j, Y', strtotime($voyage->end_date));
+// $begin_date = date('F j, Y', strtotime($voyage->begin_date));
+// $end_date = date('F j, Y', strtotime($voyage->end_date));
 	
+?>
 
-} ?>
-
-
-
-
-  
 <style>
 #container-view {min-height: 300px;}
 #container-view .container-left {width: 70%; float: left;}
@@ -129,14 +105,15 @@ if($trip_id) {
 		<div id="voyagurs">
 			<h3>Voyagurs</h3>
 			<ul>
+				<li><?php echo $voyage->who;?></li>
 				<?php 
-					foreach($voyagers as $voyager) {
-						// if leader, <li class="voyage-leader">
-						// TODO: link to their profile page with their voyager info
-						if($voyager->user_id == $voyage->leader_id) echo "<li class='voyage-leader'>";
-						else echo "<li>";
-						echo "<a href=".URL."home/profile?user_id=".$voyager->user_id.">".$voyager->username."</a></li>";
-					}
+					// foreach($voyagers as $voyager) {
+					// 	// if leader, <li class="voyage-leader">
+					// 	// TODO: link to their profile page with their voyager info
+					// 	if($voyager->user_id == $voyage->leader_id) echo "<li class='voyage-leader'>";
+					// 	else echo "<li>";
+					// 	echo "<a href=".URL."home/profile?user_id=".$voyager->user_id.">".$voyager->username."</a></li>";
+					// }
 				?>
 			</ul>
 		</div>
