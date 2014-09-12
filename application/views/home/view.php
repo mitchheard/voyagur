@@ -1,5 +1,22 @@
 <?php
+// get params from the URL
 $trip_id = $_GET['tripid'];
+$voyager_id = $_GET['voyager_id'];
+
+// if trip id exists
+if($trip_id) {
+
+	// $voyage_info = Voyage::get(4);
+
+	$voyage_info = new Voyage();
+	$voyage = $voyage_info->getVoyage($trip_id);
+	$voyagers = $voyage_info->getVoyagers($trip_id);
+	// TODO: php page for functions like "get leader"
+	krumo($voyagers);
+	krumo($voyage);
+	
+
+} // end if
 ?>
 <style>
 #container-view {min-height: 300px;}
@@ -35,14 +52,15 @@ $trip_id = $_GET['tripid'];
 		<div id="voyagurs">
 			<h3>Voyagurs</h3>
 			<ul>
-				<li class="voyage-leader">Mike</li>
-				<li>John</li>
-				<li>Chris</li>
-				<li>Jenny</li>
-				<li>Tom</li>
-				<li>Lisa</li>
-				<li>Karl</li>
-				<li>Taylor</li>
+				<?php 
+					foreach($voyagers as $voyager) {
+						// if leader, <li class="voyage-leader">
+						// TODO: link to their profile page with their voyager info
+						if($voyager->user_id == $voyage->leader_id) echo "<li class='voyage-leader'>";
+						else echo "<li>";
+						echo "<a href=".URL."home/user?voyager_id=".$voyager->user_id.">".$voyager->username."</li>";
+					}
+				?>
 			</ul>
 		</div>
 	</div>

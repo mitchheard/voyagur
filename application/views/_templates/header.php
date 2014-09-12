@@ -1,3 +1,7 @@
+<?php
+require_once "/var/www/html/application/backend/voyage.inc";
+require_once "/var/www/html/application/krumo/class.krumo.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
