@@ -58,7 +58,7 @@ if($trip_id) {
 						// TODO: link to their profile page with their voyager info
 						if($voyager->user_id == $voyage->leader_id) echo "<li class='voyage-leader'>";
 						else echo "<li>";
-						echo "<a href=".URL."home/user?voyager_id=".$voyager->user_id.">".$voyager->username."</li>";
+						echo "<a href=".URL."home/profile?user_id=".$voyager->user_id.">".$voyager->username."</li>";
 					}
 				?>
 			</ul>
