@@ -56,6 +56,7 @@ class Home extends Controller
         }
 
         // where to go after song has been added
+        // TODO: Send the user to the voyage trip page after they've added a voyage
         header('location: ' . URL . 'home/');
     }
      /**
@@ -107,7 +108,7 @@ class Home extends Controller
         if (isset($voyage_id)) {
             // load model, perform an action on the model
             $voyage_model = $this->loadModel('VoyageModel');
-            $voyages = $voyage_model->getViewVoyage($voyage_id);
+            $voyage = $voyage_model->getViewVoyage($voyage_id);
         }
 
 

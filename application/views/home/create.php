@@ -1,26 +1,3 @@
-<div>
-        <h3>Add a Voyage</h3>
-        <form action="<?php echo URL; ?>home/addvoyage" method="POST">
-            <label>Name of Trip</label>
-            <input type="text" name="name" value="" required />
-            <label>Where</label>
-            <input type="text" name="where" value="" required />
-            <label>When</label>
-            <input type="text" name="when" value="" required />
-            <label>Who</label>
-            <input type="text" name="who" value="" />
-            <label>How will you get there</label>
-            <input type="text" name="how" value="" />
-            <label>Are you celebrating an event or purpose for voyage</label>
-            <input type="text" name="event_type" value="" />
-            <label>You the fearless leader</label>
-            <input type="checkbox" name="leader" value="" />
-
-            <input type="submit" name="submit_add_voyage" value="Submit" />
-        </form>
-    </div>
-
-
 <h2>list of all voyages</h2>
   <table>
             <thead style="background-color: #ddd; font-weight: bold;">
@@ -54,39 +31,37 @@
     <br />
     <br />
 
-
-
-
-
-
-
 <div id="container">
-  <form role="form" action="created.php" method="post">
+  <form role="form" action="<?php echo URL; ?>home/addvoyage" method="POST">
+    <div class="form-group">
+      <label for="inputDestination">What is the name of your trip?</label>
+      <input type="text" class="form-control" name="where" value="" placeholder="Trip Name">
+    </div>
     <div class="form-group">
       <label for="inputDestination">Where do you want to go?</label>
-      <input type="destination" class="form-control" id="destination" placeholder="Where do you want to go?">
+      <input type="text" class="form-control" name="where" value="" placeholder="Chiang Mai, Thailand">
     </div>
     <div class="form-group">
       <label for="inputDeparture">When are you going?</label>
-      <input type="departure" class="form-control" id="departure" placeholder="When are you going?">
+      <input type="text" class="form-control" name="when" value="" placeholder="11/3/2015?">
     </div>
     <div class="form-group">
       <label for="inputVoyagurs">Who is coming with you</label>
-      <input type="voyagurs" class="form-control" id="voyagurs" placeholder="Who is coming with you?">
+      <input type="text" class="form-control" name="who" value="" placeholder="Your Butt?">
     </div>
     <div class="form-group">
       <label for="inputTransportation">How will you get there?</label>
-      <input type="transportation" class="form-control" id="transportation" placeholder="How will you get there?">
+      <input type="text" class="form-control" name="how" value="" placeholder="Plane, Train, Automobile?">
     </div>
     <div class="form-group">
       <label for="inputPurpose">Are you celebrating an event or is there a theme/puprpose for the Voyage?</label>
-      <input type="purpose" class="form-control" id="purpose" placeholder="Are you celebrating an event or is there a theme/puprpose for the Voyage?">
+      <input type="text" class="form-control" name="event_type" value="" placeholder="Partying Hard">
     </div>
     <div class="checkbox">
       <label>
-        <input type="checkbox"> Are you the Voyagur Leader?
+        <input type="checkbox" name="leader" value=""> Are you the Voyagur Leader?
       </label>
     </div>
-    <button type="submit" class="btn btn-default">Create Voyage</button>
+    <button type="submit" name="submit_add_voyage" value="Submit" class="btn btn-default">Create Voyage</button>
   </form>
 </div>

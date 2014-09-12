@@ -22,6 +22,7 @@ class VoyageModel
     public function getAllVoyages()
     {
         $sql = "select id, name, who, `where`, `when`, how from voyage";
+
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -42,7 +43,10 @@ class VoyageModel
         // libs/controller.php! If you prefer to get an associative array as the result, then do
         // $query->fetchAll(PDO::FETCH_ASSOC); or change libs/controller.php's PDO options to
         // $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC ...
-        return $query->fetchAll();
+        
+        //returning only a single voyage
+        $single_view = $query->fetchAll();
+        return $single_view[0];
     }
 
 
@@ -68,7 +72,8 @@ class VoyageModel
         $sql = "INSERT INTO voyage (`name`,`where`, who, `when`, how, event_type, leader) VALUES ('$name','$where', '$who', '$when', '$how', '$event_type', '$leader')";
 
        $con=mysqli_connect("localhost","root","root", "voyagur");
-        
+  
+
         // Check connection
         if (mysqli_connect_errno()) {
             echo "  Failed to connect to MySQL: " . mysqli_connect_error();
