@@ -1,0 +1,310 @@
+# ************************************************************
+# Sequel Pro SQL dump
+# Version 4096
+#
+# http://www.sequelpro.com/
+# http://code.google.com/p/sequel-pro/
+#
+# Host: 127.0.0.1 (MySQL 5.5.35-0ubuntu0.12.04.2)
+# Database: voyagur
+# Generation Time: 2014-09-12 01:40:17 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table location
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `location`;
+
+CREATE TABLE `location` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `location` varchar(100) DEFAULT NULL,
+  `google_id` int(11) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `location` WRITE;
+/*!40000 ALTER TABLE `location` DISABLE KEYS */;
+
+INSERT INTO `location` (`id`, `location`, `google_id`, `country`, `state`)
+VALUES
+	(1,'Bangkok',NULL,'Thailand',NULL),
+	(2,'Chang Mai',NULL,'Thailand',NULL),
+	(3,'New Orleans',NULL,'United States','Louisiana');
+
+/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table song
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `song`;
+
+CREATE TABLE `song` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `artist` text COLLATE utf8_unicode_ci NOT NULL,
+  `track` text COLLATE utf8_unicode_ci NOT NULL,
+  `link` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+LOCK TABLES `song` WRITE;
+/*!40000 ALTER TABLE `song` DISABLE KEYS */;
+
+INSERT INTO `song` (`id`, `artist`, `track`, `link`)
+VALUES
+	(1,'Dena','Cash, Diamond Ring, Swimming Pools','http://www.youtube.com/watch?v=r4CDc9yCAqE'),
+	(2,'Jessy Lanza','Kathy Lee','http://vimeo.com/73455369'),
+	(3,'The Orwells','In my Bed (live)','http://www.youtube.com/watch?v=8tA_2qCGnmE'),
+	(4,'L\'Orange & Stik Figa','Smoke Rings','https://www.youtube.com/watch?v=Q5teohMyGEY'),
+	(6,'Bon Hiver','Wolves (Kill them with Colour Remix)','http://www.youtube.com/watch?v=5GXAL5mzmyw'),
+	(7,'Detachments','Circles (Martyn Remix)','http://www.youtube.com/watch?v=UzS7Gvn7jJ0'),
+	(8,'Dillon & Dirk von Loetzow','Tip Tapping (Live at ZDF Aufnahmezustand)','https://www.youtube.com/watch?v=hbrOLsgu000'),
+	(9,'Dillon','Contact Us (Live at ZDF Aufnahmezustand)','https://www.youtube.com/watch?v=E6WqTL2Up3Y'),
+	(10,'Tricky','Hey Love (Promo Edit)','http://www.youtube.com/watch?v=OIsCGdW49OQ'),
+	(11,'Compuphonic','Sunset feat. Marques Toliver (DJ T. Remix)','http://www.youtube.com/watch?v=Ue5ZWSK9r00'),
+	(12,'Ludovico Einaudi','Divenire (live @ Royal Albert Hall London)','http://www.youtube.com/watch?v=X1DRDcGlSsE'),
+	(13,'Maxxi Soundsystem','Regrets we have no use for (Radio1 Rip)','https://soundcloud.com/maxxisoundsystem/maxxi-soundsystem-ft-name-one'),
+	(14,'Beirut','Nantes (Fredo & Thang Remix)','https://www.youtube.com/watch?v=ojV3oMAgGgU'),
+	(15,'Buku','All Deez','http://www.youtube.com/watch?v=R0bN9JRIqig'),
+	(16,'Pilocka Krach','Wild Pete','http://www.youtube.com/watch?v=4wChP_BEJ4s'),
+	(17,'Mount Kimbie','Here to stray (live at Pitchfork Music Festival Paris)','http://www.youtube.com/watch?v=jecgI-zEgIg'),
+	(18,'Kool Savas','King of Rap (2012) / Ein Wunder','http://www.youtube.com/watch?v=mTqc6UTG1eY&hd=1'),
+	(19,'Chaim feat. Meital De Razon','Love Rehab (Original Mix)','http://www.youtube.com/watch?v=MJT1BbNFiGs'),
+	(20,'Emika','Searching','http://www.youtube.com/watch?v=oscuSiHfbwo'),
+	(21,'Emika','Sing to me','http://www.youtube.com/watch?v=k9sDBZm8pgk'),
+	(22,'George Fitzgerald','Thinking of You','http://www.youtube.com/watch?v=-14B8l49iKA'),
+	(23,'Disclosure','You & Me (Flume Edit)','http://www.youtube.com/watch?v=OUkkaqSNduU'),
+	(24,'Crystal Castles','Doe Deer','http://www.youtube.com/watch?v=zop0sWrKJnQ'),
+	(25,'Tok Tok vs. Soffy O.','Missy Queens Gonna Die','http://www.youtube.com/watch?v=EN0Tnw5zy6w'),
+	(26,'Fink','Maker (Synapson Remix)','http://www.youtube.com/watch?v=Dyd-cUkj4Nk'),
+	(27,'Flight Facilities (ft. Christine Hoberg)','Clair De Lune','http://www.youtube.com/watch?v=Jcu1AHaTchM'),
+	(28,'Karmon','Turning Point (Original Mix)','https://www.youtube.com/watch?v=-tB-zyLSPEo'),
+	(29,'Shuttle Life','The Birds','http://www.youtube.com/watch?v=-I3m3cWDEtM'),
+	(30,'SantÃ©','Homegirl (Rampa Mix)','http://www.youtube.com/watch?v=fnhMNOWxLYw'),
+	(31,'kevin','onaplane','www.dontcare.com');
+
+/*!40000 ALTER TABLE `song` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table trip
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `trip`;
+
+CREATE TABLE `trip` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `voyage_id` int(11) DEFAULT NULL,
+  `location` int(11) DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `leader_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `trip` WRITE;
+/*!40000 ALTER TABLE `trip` DISABLE KEYS */;
+
+INSERT INTO `trip` (`id`, `name`, `voyage_id`, `location`, `start_date`, `end_date`, `leader_id`)
+VALUES
+	(1,'Chang Mai',1,2,'2013-12-29','2013-12-31',2);
+
+/*!40000 ALTER TABLE `trip` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table trip_manifest
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `trip_manifest`;
+
+CREATE TABLE `trip_manifest` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `trip_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `trip_manifest` WRITE;
+/*!40000 ALTER TABLE `trip_manifest` DISABLE KEYS */;
+
+INSERT INTO `trip_manifest` (`id`, `user_id`, `trip_id`)
+VALUES
+	(1,1,1),
+	(2,2,1);
+
+/*!40000 ALTER TABLE `trip_manifest` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table user_roles
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `user_roles`;
+
+CREATE TABLE `user_roles` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `admin` int(11) DEFAULT NULL,
+  `voyage_creator` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `user_roles` WRITE;
+/*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
+
+INSERT INTO `user_roles` (`id`, `user_id`, `admin`, `voyage_creator`)
+VALUES
+	(1,2,1,NULL),
+	(2,1,1,NULL);
+
+/*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `date_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
+INSERT INTO `users` (`id`, `username`, `location`, `name`, `email`, `created`, `date_modified`)
+VALUES
+	(1,'kevin','In Santa Barbara','Kevin Marion','kevinamarion@gmail.com',NULL,'2014-07-20 20:38:30'),
+	(2,'mitch','In austin','Mitch Heard','mitchheard@gmail.com',NULL,'2014-07-20 20:38:35'),
+	(3,'adam','I am here','Adam Roberts',NULL,NULL,'2014-07-20 20:38:25');
+
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table voyage
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `voyage`;
+
+CREATE TABLE `voyage` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `date_updated` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `name` varchar(100) DEFAULT '',
+  `trip_type` int(11) DEFAULT NULL,
+  `start_location` int(11) DEFAULT NULL,
+  `multiple_location` int(11) DEFAULT NULL,
+  `end_location` int(11) DEFAULT NULL,
+  `begin_date` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL,
+  `leader_id` int(11) DEFAULT NULL,
+  `private` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='This is the main table that holds information for independent voyage';
+
+LOCK TABLES `voyage` WRITE;
+/*!40000 ALTER TABLE `voyage` DISABLE KEYS */;
+
+INSERT INTO `voyage` (`id`, `date_updated`, `name`, `trip_type`, `start_location`, `multiple_location`, `end_location`, `begin_date`, `end_date`, `leader_id`, `private`)
+VALUES
+	(1,'2014-09-12 01:20:54','Suit & Thai',1,1,NULL,2,'2013-12-25 00:00:00','2014-01-08 00:00:00',1,1),
+	(2,'2014-07-20 20:59:38','Tays Bachelor',2,3,NULL,3,'2014-10-17 00:00:00','2014-10-19 00:00:00',1,1);
+
+/*!40000 ALTER TABLE `voyage` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table voyage_manifest
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `voyage_manifest`;
+
+CREATE TABLE `voyage_manifest` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `voyage_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `voyage_manifest` WRITE;
+/*!40000 ALTER TABLE `voyage_manifest` DISABLE KEYS */;
+
+INSERT INTO `voyage_manifest` (`id`, `user_id`, `voyage_id`)
+VALUES
+	(1,1,1),
+	(2,2,1),
+	(3,3,2),
+	(4,1,2),
+	(5,2,2);
+
+/*!40000 ALTER TABLE `voyage_manifest` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table voyage_type
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `voyage_type`;
+
+CREATE TABLE `voyage_type` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `short_name` varchar(100) DEFAULT NULL,
+  `long_name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `voyage_type` WRITE;
+/*!40000 ALTER TABLE `voyage_type` DISABLE KEYS */;
+
+INSERT INTO `voyage_type` (`id`, `short_name`, `long_name`)
+VALUES
+	(1,'World Group Trip',NULL),
+	(2,'Bachelor Party',NULL),
+	(3,'Bachelorette Party',NULL),
+	(4,'Wedding Party',NULL),
+	(5,'Birthday',NULL),
+	(6,'Golf Trip',NULL),
+	(7,'Business',NULL),
+	(8,'Spring Break',NULL),
+	(9,'Road Trip',NULL),
+	(10,'Sports',NULL),
+	(11,'Anniversary',NULL),
+	(12,'Ski Trip',NULL),
+	(13,'Reunion',NULL);
+
+/*!40000 ALTER TABLE `voyage_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
