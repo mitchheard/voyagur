@@ -14,7 +14,12 @@ table {
 }
 
 .container {margin: 0 auto; max-width: 900px;}
-.container > hr {margin: 30px 0;}
+.container > hr {margin: 0;}
+
+.header {display: inline-block; width: 100%; margin-top: 15px; height: 90px;}
+.header-logo {float: left; background-image: url('../img/voyagur-plane-logo.png'); background-repeat: no-repeat; width: 100px; height: 100px;}
+.header-title {float: left;}
+.header-masthead {float: right; margin-top: 20px;}
 
 .where-are-we-box {
     position: relative;
