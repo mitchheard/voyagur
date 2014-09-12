@@ -38,7 +38,7 @@ class voyage{
 	private static function get_main_voyage($voyage_id) {
 		$main_sql = "select * from voyage where id = " . $voyage_id;
 		$voyage_data = self::query($main_sql);
-
+		$voyage_data = $voyage_data[0];
 		return $voyage_data;
 	}
 

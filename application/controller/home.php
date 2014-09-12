@@ -42,7 +42,12 @@ class Home extends Controller
         require 'application/views/home/modify.php';
         require 'application/views/_templates/footer.php';
     }
-
+    public function db()
+    {
+        require 'application/views/_templates/header.php';
+        require 'application/views/home/db.php';
+        require 'application/views/_templates/footer.php';
+    }
     public function view()
     {
         require 'application/views/_templates/header.php';
