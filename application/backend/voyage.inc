@@ -25,17 +25,29 @@ class voyage{
 		return $hel;
 		//return self::getInfo(4);
 	}
+	//pass a voyage id to get an array of voyagers 
+	public static function getVoyagers($voyage_id) {
+		$holder = self::get_voyagers($voyage_id);
+		return $holder;
+		//return self::getInfo(4);
+	}
 	public static function get($voyage_id) {
 		return new voyage($voyage_id);
 	}
 
-	private static function get_main_voyage($id) {
-		$main_sql = "select * from voyage where id = " . $id;
+	private static function get_main_voyage($voyage_id) {
+		$main_sql = "select * from voyage where id = " . $voyage_id;
 		$voyage_data = self::query($main_sql);
 
 		return $voyage_data;
 	}
 
+	private static function get_voyagers($voyage_id) {
+		$main_sql = "select * from voyage_manifest inner join users on voyage_manifest.user_id = users.id and  voyage_manifest.voyage_id = " . $voyage_id;
+		$voyagers_data = self::query($main_sql);
+
+		return $voyagers_data;
+	}
 	private static function query($query) {
 		$con=mysqli_connect("localhost","root","root", "voyagur");
 		
@@ -45,7 +57,15 @@ class voyage{
 		}
 		
 		$result = mysqli_query($con,$query);
-		return $result->fetch_object();
+
+		$object_send = null;
+		$i =0;
+		while ($row = $result->fetch_object() ) {
+		    $object_send[$i]= $row;
+		    $i++; 
+		}
+
+		return $object_send;
 	}
 
 }
