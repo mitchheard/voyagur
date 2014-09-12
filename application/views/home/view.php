@@ -1,3 +1,6 @@
+<?php
+$trip_id = $_GET['tripid'];
+?>
 <style>
 #container-view {min-height: 300px;}
 #container-view .container-left {width: 70%; float: left;}
@@ -24,6 +27,8 @@
 	<div class="container-left">
 		<div id="voyage-details">
 			<h3>Voyage Outline</h3>
+			<?php echo "trip_id = ".$trip_id;
+			?>
 		</div>
 	</div>
 	<div class="container-right">
