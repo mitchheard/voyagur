@@ -27,3 +27,36 @@
 
   </div>
 </div>
+
+<h2>list of all voyages</h2>
+  <table>
+            <thead style="background-color: #ddd; font-weight: bold;">
+            <tr>
+                <td>Id</td>
+
+                <td>who </td>
+                <td>where </td>
+                <td>when </td>
+                <td>how </td>
+                <td>DELETE </td>
+            </tr>
+            </thead>
+            <tbody>
+<?php foreach ($voyages as $voyage) { ?>
+                <tr>
+                  <td>
+                        <?php if (isset($voyage->id)) { ?>
+                            <a href="<?php echo URL . "home/view/".$voyage->id; ?>"><?php echo $voyage->id . " "; if (isset($voyage->name)) echo $voyage->name; ?></a>
+                        <?php } ?>
+                    </td>
+          
+                    <td><?php if (isset($voyage->who)) echo $voyage->who; ?></td>
+                    <td><?php if (isset($voyage->where)) echo $voyage->where; ?></td>
+                    <td><?php if (isset($voyage->when)) echo $voyage->when; ?></td>
+                    <td><?php if (isset($voyage->how)) echo $voyage->how; ?></td>
+              
+                    <td><a href="<?php echo URL . 'home/deletevoyage/' . $voyage->id; ?>">x</a></td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
