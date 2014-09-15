@@ -2,51 +2,49 @@
 
 /**
  * This is the "base controller class". All other "real" controllers extend this class.
+ * Whenever a controller is created, we also
+ * 1. initialize a session
+ * 2. check if the user is not logged in anymore (session timeout) but has a cookie
+ * 3. create a database connection (that will be passed to all models that need a database connection)
+ * 4. create a view object
  */
 class Controller
 {
-    /**
-     * @var null Database Connection
-     */
-    public $db = null;
-
-    /**
-     * Whenever a controller is created, open a database connection too. The idea behind is to have ONE connection
-     * that can be used by multiple models (there are frameworks that open one connection per model).
-     */
     function __construct()
     {
-        $this->openDatabaseConnection();
+        Session::init();
+
+        // user has remember-me-cookie ? then try to login with cookie ("remember me" feature)
+        if (!isset($_SESSION['user_logged_in']) && isset($_COOKIE['rememberme'])) {
+            header('location: ' . URL . 'login/loginWithCookie');
+        }
+
+        // create database connection
+        try {
+            $this->db = new Database();
+        } catch (PDOException $e) {
+            die('Database connection could not be established.');
+        }
+
+        // create a view object (that does nothing, but provides the view render() method)
+        $this->view = new View();
     }
 
     /**
-     * Open the database connection with the credentials from application/config/config.php
+     * loads the model with the given name.
+     * @param $name string name of the model
      */
-    private function openDatabaseConnection()
+    public function loadModel($name)
     {
-        // set the (optional) options of the PDO connection. in this case, we set the fetch mode to
-        // "objects", which means all results will be objects, like this: $result->user_name !
-        // For example, fetch mode FETCH_ASSOC would return results like this: $result["user_name] !
-        // @see http://www.php.net/manual/en/pdostatement.fetch.php
-        $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
+        $path = MODELS_PATH . strtolower($name) . '.php';
 
-        // generate a database connection, using the PDO connector
-        // @see http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
-        $this->db = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS, $options);
-    }
-
-    /**
-     * Load the model with the given name.
-     * loadModel("SongModel") would include models/songmodel.php and create the object in the controller, like this:
-     * $songs_model = $this->loadModel('SongsModel');
-     * Note that the model class name is written in "CamelCase", the model's filename is the same in lowercase letters
-     * @param string $model_name The name of the model
-     * @return object model
-     */
-    public function loadModel($model_name)
-    {
-        require 'application/models/' . strtolower($model_name) . '.php';
-        // return new model (and pass the database connection to the model)
-        return new $model_name($this->db);
+        if (file_exists($path)) {
+            require MODELS_PATH . strtolower($name) . '.php';
+            // The "Model" has a capital letter as this is the second part of the model class name,
+            // all models have names like "LoginModel"
+            $modelName = $name;
+            // return the new model object while passing the database connection to the model
+            return new $modelName($this->db);
+        }
     }
 }

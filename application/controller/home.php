@@ -17,7 +17,6 @@ class Home extends Controller
     public function index()
     {
         
-
         $voyage_model = $this->loadModel('VoyageModel');
         $voyages = $voyage_model->getAllVoyages();
         // debug message to show where you are, just for the demo
@@ -35,29 +34,7 @@ class Home extends Controller
         require 'application/views/home/signin.php';
     }
 
-    public function create()
-    {
-        $voyage_model = $this->loadModel('VoyageModel');
-        $voyages = $voyage_model->getAllVoyages();
-
-        require 'application/views/_templates/header.php';
-        require 'application/views/home/create.php';
-        require 'application/views/_templates/footer.php';
-    }
-    public function addvoyage()
-    {
-        echo 'Message from Controller: You are in the Controller: Songs, using the method addSong().';
-      
-        // if we have POST data to create a new song entry
-        if (isset($_POST["submit_add_voyage"])) {
-            // load model, perform an action on the model
-            $voyage_model = $this->loadModel('VoyageModel');
-            $voyage_model->addVoyage($_POST["name"], $_POST["where"], $_POST["who"],  $_POST["when"],  $_POST["how"],  $_POST["event_type"],  $_POST["leader"]);
-        }
-
-        // where to go after song has been added
-        header('location: ' . URL . 'home/');
-    }
+    
      /**
      * ACTION: deleteSong
      * This method handles what happens when you move to http://yourproject/songs/deletesong
@@ -82,39 +59,14 @@ class Home extends Controller
         header('location: ' . URL . 'home/');
     }
 
-    public function modify()
-    {
-        require 'application/views/_templates/header.php';
-        require 'application/views/home/modify.php';
-        require 'application/views/_templates/footer.php';
-    }
+
     public function db()
     {
         require 'application/views/_templates/header.php';
         require 'application/views/home/db.php';
         require 'application/views/_templates/footer.php';
     }
-    public function profile()
-    {
-        require 'application/views/_templates/header.php';
-        require 'application/views/home/profile.php';
-        require 'application/views/_templates/footer.php';
-    }
 
-    
-    public function view($voyage_id)
-    {
-        if (isset($voyage_id)) {
-            // load model, perform an action on the model
-            $voyage_model = $this->loadModel('VoyageModel');
-            $voyages = $voyage_model->getViewVoyage($voyage_id);
-        }
-
-
-        require 'application/views/_templates/header.php';
-        require 'application/views/home/view.php';
-        require 'application/views/_templates/footer.php';
-    }
 
     public function about()
     {
@@ -129,35 +81,4 @@ class Home extends Controller
         require 'application/views/home/contact.php';
         require 'application/views/_templates/footer.php';
     }
-
-    /**
-     * PAGE: exampleone
-     * This method handles what happens when you move to http://yourproject/home/exampleone
-     * The camelCase writing is just for better readability. The method name is case insensitive.
-     */
-    public function exampleOne()
-    {
-        // debug message to show where you are, just for the demo
-        echo 'Message from Controller: You are in the controller home, using the method exampleOne()';
-        // load views. within the views we can echo out $songs and $amount_of_songs easily
-        require 'application/views/_templates/header.php';
-        require 'application/views/home/example_one.php';
-        require 'application/views/_templates/footer.php';
-    }
-
-    /**
-     * PAGE: exampletwo
-     * This method handles what happens when you move to http://yourproject/home/exampletwo
-     * The camelCase writing is just for better readability. The method name is case insensitive.
-     */
-    public function exampleTwo()
-    {
-        // debug message to show where you are, just for the demo
-        echo 'Message from Controller: You are in the controller home, using the method exampleTwo()';
-        // load views. within the views we can echo out $songs and $amount_of_songs easily
-        require 'application/views/_templates/header.php';
-        require 'application/views/home/example_two.php';
-        require 'application/views/_templates/footer.php';
-    }
-
 }
