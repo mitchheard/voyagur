@@ -13,12 +13,13 @@ $voyager_id = 0;
 #container-view .container-left {width: 70%; float: left;}
 #container-view .container-right {width: 30%; float: left;}
 #container-view h2 {font-size: 2em; margin: 0;}
-#container-view .container-right h3 {text-align: center;}
+#container-view .container-right h3 {margin-left: 50px;}
 #voyagurs {margin-top: -10px;}
 #voyagurs ul {margin-left: 40px;}
 .voyage-header {}
 #voyage-title {display: inline-block;}
-#voyage-dates {float: right; margin-top: 10px;}
+#voyage-title h2 {padding: 15px;}
+#voyage-dates {padding-left: 20px; width: 250px;}
 .voyage-header .dates-title {font-weight: bold;}
 .voyage-leader {font-weight: bold; font-style: italic;}
 </style>
@@ -34,7 +35,6 @@ $voyager_id = 0;
 			<span class="dates-range"><?php echo $voyage->when;?></span>
 		</div>
 	</div>
-	<hr>
 	<script type="text/javascript">
 		$(function () {
 		    $(document).on("click", "li.active > a", function () {

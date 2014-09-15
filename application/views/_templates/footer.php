@@ -1,10 +1,12 @@
-<hr>
-
-      <div class="footer">
-        <p>&copy; Company 2013</p>
+          <div class="push"></div>
+        </div> <!-- /container-content -->
+      </div> <!-- /container -->
+    </div> <!-- /main -->
+    <div class="footer">
+        <div class="footer-container">
+          
+        </div>
       </div>
-
-    </div> <!-- /container -->
 
     <!-- Le javascript
     ================================================== -->

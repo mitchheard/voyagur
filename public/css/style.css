@@ -1,25 +1,29 @@
 /* Demo CSS */
+* {margin: 0;}
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
+html, body {height: 100%;}
 
-body {
-    font-size: 15px;
-}
+body {font-size: 15px; padding: 0;}
 
-table {
-    font-size: 13px;
-}
+.footer, .push {height: 10em;}
+.footer {background-color: #49dcc4; color: #fff; border-bottom: 5px solid #13274B;}
+.footer-container {margin: 0 auto !important; width: 900px; min-height: 100%; height: auto !important; height: 100%;}
 
-.container {margin: 0 auto; max-width: 900px;}
+table {font-size: 13px;}
+
+.main {background-image: url('../img/satinweave.png');}
+.container {margin: 0 auto -4em; max-width: 75%; min-height: 100%; height: auto !important; height: 100%;}
 .container > hr {margin: 0;}
 
-.header {display: inline-block; width: 100%; margin-top: 15px; height: 90px;}
+.header {display: inline-block; width: 100%; height: 120px; background-color: #fff;}
+.header-container {height: 100%; width:100%; padding: 20px; margin-top: 10px;}
+.header-left {float: left; width: 33%; padding-left: 25px;}
+.header-right {float: right; width: 33%; padding-right: 20px; text-align: right;}
+.header-center {display: inline-block; width: 33%; text-align: center;} 
 .header-logo {float: left; background-image: url('../img/voyagur-plane-logo.png'); background-repeat: no-repeat; width: 100px; height: 100px;}
 .header-title {float: left;}
-.header-masthead {float: right; margin-top: 20px;}
+.header-navi {display: inline-block; margin-top: 20px;}
+.header-login {display: inline-block; margin-top: 32px;}
 
 .where-are-we-box {
     position: relative;
