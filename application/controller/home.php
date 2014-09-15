@@ -34,7 +34,7 @@ class Home extends Controller
         require 'application/views/home/signin.php';
     }
 
-    
+
      /**
      * ACTION: deleteSong
      * This method handles what happens when you move to http://yourproject/songs/deletesong
@@ -64,6 +64,21 @@ class Home extends Controller
     {
         require 'application/views/_templates/header.php';
         require 'application/views/home/db.php';
+        require 'application/views/_templates/footer.php';
+    }
+
+    
+    public function view($voyage_id)
+    {
+        if (isset($voyage_id)) {
+            // load model, perform an action on the model
+            $voyage_model = $this->loadModel('VoyageModel');
+            $voyage = $voyage_model->getViewVoyage($voyage_id);
+        }
+
+
+        require 'application/views/_templates/header.php';
+        require 'application/views/home/view.php';
         require 'application/views/_templates/footer.php';
     }
 

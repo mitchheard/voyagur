@@ -72,15 +72,29 @@ require_once "/var/www/html/application/krumo/class.krumo.php";
   <script src="<?php echo URL; ?>public/js/application.js"></script>
 </head>
 <body>
-<div class="container">
-
-    <div class="masthead">
-      <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="<?php echo URL; ?>">Home</a></li>
-        <li><a href="<?php echo URL; ?>home/about">About</a></li>
-        <li><a href="<?php echo URL; ?>home/contact">Contact</a></li>
-      </ul>
-      <h3 class="muted">Voyagur</h3>
+<div class="main">
+  <div class="header">
+    <div class="header-container">
+      <div class="header-left">
+          <div class="header-logo"></div>
+          <div class="header-title"><h1 class="muted">Voyagur</h1></div>
+      </div>
+      <div class="header-center">
+        <div class="header-navi">
+            <ul class="nav nav-pills pull-right">
+              <li><a href="<?php echo URL; ?>">Home</a></li>
+              <li><a href="<?php echo URL; ?>home/about">About</a></li>
+              <li><a href-"<?php echo URL; ?>home/news">News</a></li>
+              <li><a href="<?php echo URL; ?>home/contact">Contact</a></li>
+            </ul>
+          </div>
+      </div>
+      <div class="header-right">
+        <div class="header-login">
+          <p>Login/Logout</p>
+        </div>
+      </div>
     </div>
-
-    <hr>
+  </div>
+  <div class="container">
+    <div class="container-content">
