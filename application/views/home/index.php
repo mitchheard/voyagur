@@ -1,7 +1,7 @@
 
 <div class="jumbotron">
   <h1>Where to?</h1>
-  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo.</p>
+  <p class="lead">Let us help you plan your next Voyage</p>
 
   <p><a class="btn btn-primary btn-lg" role="button" href="<?php echo URL; ?>on/view">View a Voyage<a/></p>
   <p><a class="btn btn-primary btn-lg" role="button" href="<?php echo URL; ?>on/create">Create a Voyage</a></p>
