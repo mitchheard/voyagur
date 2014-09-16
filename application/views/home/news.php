@@ -1,17 +1,10 @@
-
 <div class="jumbotron">
-  <h1>Where to?</h1>
-  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo.</p>
-
-  <p><a class="btn btn-primary btn-lg" role="button" href="<?php echo URL; ?>on/view">View a Voyage<a/></p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="<?php echo URL; ?>on/create">Create a Voyage</a></p>
-  <p><a class="" href="<?php echo URL; ?>login/">Sign in</a> | <a class="" href="<?php echo URL; ?>login/register/">Register</a></p>
-
+  <h1>News</h1>
+  <p class="lead">Random News Stories about us and what we are doing</p>
 </div>
 
-
-<!--
 <hr>
+
 <div class="row-fluid marketing">
   <div class="span6">
     <h4>Subheading</h4>
@@ -31,4 +24,3 @@
 
   </div>
 </div>
--->

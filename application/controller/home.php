@@ -10,15 +10,20 @@
  */
 class Home extends Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+
+        $user_id = Session::get('user_id'); 
+    }
+
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
     public function index()
     {
-        
-        $voyage_model = $this->loadModel('VoyageModel');
-        $voyages = $voyage_model->getAllVoyages();
+
         // debug message to show where you are, just for the demo
         // echo 'Message from Controller: You are in the controller home, using the method index()';
         // load views. within the views we can echo out $songs and $amount_of_songs easily
@@ -27,11 +32,6 @@ class Home extends Controller
         require 'application/views/_templates/footer.php';
 
 
-    }
-
-    public function signIn()
-    {
-        require 'application/views/home/signin.php';
     }
 
 
@@ -59,32 +59,9 @@ class Home extends Controller
         header('location: ' . URL . 'home/');
     }
 
-
-    public function db()
-    {
-        require 'application/views/_templates/header.php';
-        require 'application/views/home/db.php';
-        require 'application/views/_templates/footer.php';
-    }
-
-    
-    public function view($voyage_id)
-    {
-        if (isset($voyage_id)) {
-            // load model, perform an action on the model
-            $voyage_model = $this->loadModel('VoyageModel');
-            $voyage = $voyage_model->getViewVoyage($voyage_id);
-        }
-
-
-        require 'application/views/_templates/header.php';
-        require 'application/views/home/view.php';
-        require 'application/views/_templates/footer.php';
-    }
-
-
     public function about()
     {
+
         require 'application/views/_templates/header.php';
         require 'application/views/home/about.php';
         require 'application/views/_templates/footer.php';
@@ -94,6 +71,12 @@ class Home extends Controller
     {
         require 'application/views/_templates/header.php';
         require 'application/views/home/contact.php';
+        require 'application/views/_templates/footer.php';
+    }
+    public function news()
+    {
+        require 'application/views/_templates/header.php';
+        require 'application/views/home/news.php';
         require 'application/views/_templates/footer.php';
     }
 }

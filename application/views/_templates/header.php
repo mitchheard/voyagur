@@ -84,14 +84,23 @@ require_once "/var/www/html/application/krumo/class.krumo.php";
             <ul class="nav nav-pills pull-right">
               <li><a href="<?php echo URL; ?>">Home</a></li>
               <li><a href="<?php echo URL; ?>home/about">About</a></li>
-              <li><a href-"<?php echo URL; ?>home/news">News</a></li>
-              <li><a href="<?php echo URL; ?>home/contact">Contact</a></li>
+              <li><a href="<?php echo URL; ?>home/news">News</a></li>
+              <li><a href="<?php echo URL; ?>home/contact">Contact</a></li>              
             </ul>
+
           </div>
       </div>
       <div class="header-right">
         <div class="header-login">
-          <p>Login/Logout</p>
+          <?php 
+          //Check to see if user is logged in and show appropriate value
+            if(Session::get('user_id')) {
+              echo '<a href="'.URL.'login/showprofile">'.Session::get('user_name')."'s Profile</a> | ";
+              echo '<a href="'.URL.'login/logout">Logout</a>';
+            } else {
+                 echo '<a href="'.URL.'login">Login</a>';
+            }
+          ?>
         </div>
       </div>
     </div>

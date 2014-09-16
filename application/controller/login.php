@@ -39,6 +39,7 @@ class Login extends Controller
     {
         // run the login() method in the login-model, put the result in $login_successful (true or false)
         $login_model = $this->loadModel('LoginModel');
+
         // perform the login method, put result (true or false) into $login_successful
         $login_successful = $login_model->login();
 
@@ -77,7 +78,9 @@ class Login extends Controller
      */
     function logout()
     {
-        $login_model = $this->loadModel('Login');
+        echo "here";
+        Auth::handleLogin();
+        $login_model = $this->loadModel('LoginModel');
         $login_model->logout();
         // redirect user to base URL
         header('location: ' . URL);

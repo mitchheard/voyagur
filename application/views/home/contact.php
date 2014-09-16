@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <h1>Contact</h1>
-  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo.</p>
+  <p class="lead">Contact us with Feature Ideas and any Problems</p>
 </div>
 
 <hr>

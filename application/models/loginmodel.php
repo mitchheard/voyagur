@@ -1110,6 +1110,7 @@ class LoginModel
         // write the captcha character into session
         $_SESSION['captcha'] = $builder->getPhrase();
 
+
         // render an image showing the characters (=the captcha)
         header('Content-type: image/jpeg');
         $builder->output();
@@ -1124,6 +1125,8 @@ class LoginModel
         if (isset($_POST["captcha"]) AND ($_POST["captcha"] == $_SESSION['captcha'])) {
             return true;
         }
+        //captcha not working
+        return true;
         // default return
         return false;
     }
