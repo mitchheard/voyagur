@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="">
   <h1>Contact</h1>
   <p class="lead">Contact us with Feature Ideas and any Problems</p>
 </div>

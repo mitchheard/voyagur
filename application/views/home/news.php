@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="">
   <h1>News</h1>
   <p class="lead">Random News Stories about us and what we are doing</p>
 </div>

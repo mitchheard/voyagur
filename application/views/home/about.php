@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="">
   <h1>About</h1>
   <p class="lead">Why Did we create Voyagur?</p>
   <p>Mitch and Kevin had the idea for Voyagur after years of group travel that they painstakingly put together, organized, and executed. 

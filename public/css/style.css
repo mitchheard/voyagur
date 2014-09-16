@@ -11,7 +11,7 @@ body {font-size: 15px; padding: 0;}
 
 table {font-size: 13px;}
 
-.main {background-image: url('../img/satinweave.png');}
+.main {background-image: url('../img/satinweave.png'); height: auto;}
 .container {margin: 0 auto -4em; max-width: 75%; min-height: 100%; height: auto !important; height: 100%;}
 .container > hr {margin: 0;}
 
