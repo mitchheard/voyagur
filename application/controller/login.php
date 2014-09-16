@@ -21,7 +21,7 @@ class Login extends Controller
     function index()
     {
         // create a login model to perform the getFacebookLoginUrl() method
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
 
         // if we use Facebook: this is necessary as we need the facebook_login_url in the login form (in the view)
         if (FACEBOOK_LOGIN == true) {
@@ -60,7 +60,7 @@ class Login extends Controller
     function loginWithFacebook()
     {
         // run the login() method in the login-model, put the result in $login_successful (true or false)
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $login_successful = $login_model->loginWithFacebook();
 
         // check login status
@@ -92,7 +92,7 @@ class Login extends Controller
     function loginWithCookie()
     {
         // run the loginWithCookie() method in the login-model, put the result in $login_successful (true or false)
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $login_successful = $login_model->loginWithCookie();
 
         if ($login_successful) {
@@ -135,7 +135,7 @@ class Login extends Controller
         // it was not possible to read or edit anything in the database unless the user is really logged in and
         // has a valid session.
         Auth::handleLogin();
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $login_model->editUserName();
         $this->view->render('login/editusername');
     }
@@ -160,7 +160,7 @@ class Login extends Controller
         // it was not possible to read or edit anything in the database unless the user is really logged in and
         // has a valid session.
         Auth::handleLogin();
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $login_model->editUserEmail();
         $this->view->render('login/edituseremail');
     }
@@ -172,7 +172,7 @@ class Login extends Controller
     {
         // Auth::handleLogin() makes sure that only logged in users can use this action/method and see that page
         Auth::handleLogin();
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $this->view->avatar_file_path = $login_model->getUserAvatarFilePath();
         $this->view->render('login/uploadavatar');
     }
@@ -187,7 +187,7 @@ class Login extends Controller
         // it was not possible to read or edit anything in the database unless the user is really logged in and
         // has a valid session.
         Auth::handleLogin();
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $login_model->createAvatar();
         $this->view->render('login/uploadavatar');
     }
@@ -212,7 +212,7 @@ class Login extends Controller
         // it was not possible to read or edit anything in the database unless the user is really logged in and
         // has a valid session.
         Auth::handleLogin();
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $login_model->changeAccountType();
         $this->view->render('login/changeaccounttype');
     }
@@ -223,7 +223,7 @@ class Login extends Controller
      */
     function register()
     {
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
 
         // if we use Facebook: this is necessary as we need the facebook_register_url in the login form (in the view)
         if (FACEBOOK_LOGIN == true) {
@@ -238,7 +238,7 @@ class Login extends Controller
      */
     function register_action()
     {
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $registration_successful = $login_model->registerNewUser();
 
         if ($registration_successful == true) {
@@ -253,7 +253,7 @@ class Login extends Controller
      */
     function registerWithFacebook()
     {
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         // perform the register method, put result (true or false) into $registration_successful
         $registration_successful = $login_model->registerWithFacebook();
 
@@ -275,7 +275,7 @@ class Login extends Controller
     function verify($user_id, $user_activation_verification_code)
     {
         if (isset($user_id) && isset($user_activation_verification_code)) {
-            $login_model = $this->loadModel('Login');
+            $login_model = $this->loadModel('LoginModel');
             $login_model->verifyNewUser($user_id, $user_activation_verification_code);
             $this->view->render('login/verify');
         } else {
@@ -296,7 +296,7 @@ class Login extends Controller
      */
     function requestPasswordReset_action()
     {
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $login_model->requestPasswordReset();
         $this->view->render('login/requestpasswordreset');
     }
@@ -308,7 +308,7 @@ class Login extends Controller
      */
     function verifyPasswordReset($user_name, $verification_code)
     {
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         if ($login_model->verifyPasswordReset($user_name, $verification_code)) {
             // get variables for the view
             $this->view->user_name = $user_name;
@@ -326,7 +326,7 @@ class Login extends Controller
      */
     function setNewPassword()
     {
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         // try the password reset (user identified via hidden form inputs ($user_name, $verification_code)), see
         // verifyPasswordReset() for more
         $login_model->setNewPassword();
@@ -344,7 +344,7 @@ class Login extends Controller
      */
     function showCaptcha()
     {
-        $login_model = $this->loadModel('Login');
+        $login_model = $this->loadModel('LoginModel');
         $login_model->generateCaptcha();
         print_r($login_model);
         krumo($login_model);
