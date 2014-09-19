@@ -1,3 +1,6 @@
+//require_once "/var/www/html/application/krumo/class.krumo.php";
+//krumo($voyages);
+
 <div class="content">
     <h1>Priv</h1>
 

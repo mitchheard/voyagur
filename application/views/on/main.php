@@ -88,7 +88,16 @@ if($voyages) {
     </ul>
     <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade" id="itenerary">
-            <p>The iPhone 6 measures 5.44 x 2.64 x 0.27 inches (138.1 x 67 x 6.9mm) and weighs 4.55 ounces (129g) – a weight increase that is roughly proportional to its 16% volume increase compared to the iPhone 5S.</p>
+            <p>
+            	<?php 
+            	foreach($voyages as $key => $value) {
+            		echo $key . "--" . $value;
+            		echo "<br />";
+            	}
+
+            	?>
+
+            </p>
         </div>
         <div class="tab-pane fade" id="accomodations">
             <p>aw denim you probably haven't heardFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee 
