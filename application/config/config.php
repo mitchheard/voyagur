@@ -50,7 +50,7 @@ define('MODELS_PATH', 'application/models/');
 define('VIEWS_PATH', 'application/views/');
 // don't forget to make this folder writable via chmod 775 or 777 (?)
 // the slash at the end is VERY important!
-define('AVATAR_PATH', 'avatars/');
+define('AVATAR_PATH', 'public/avatars/');
 
 /**
  * Configuration for: Additional login providers: Facebook
