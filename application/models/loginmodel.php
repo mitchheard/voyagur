@@ -574,7 +574,7 @@ class LoginModel
             $_SESSION["feedback_positive"][] = FEEDBACK_VERIFICATION_MAIL_SENDING_SUCCESSFUL;
             return true;
         } else {
-            $_SESSION["feedback_negative"][] = "click this link::::: " . $mail->Body;
+            $_SESSION["feedback_negative"][] = " Copy/paste this link:::::" . $mail->Body;
           //error fake it for not actually sending mail for verification. 
             return true;
         }
@@ -1126,7 +1126,7 @@ class LoginModel
             return true;
         }
         //captcha not working
-        return true;
+       // return true;
         // default return
         return false;
     }
