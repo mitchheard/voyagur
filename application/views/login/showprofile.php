@@ -25,6 +25,17 @@
     <div>
         Your user_id : <?php echo Session::get('user_id'); ?>
     </div>
+    <div>
+        <ul>
+            <li><a href="http://44.44.44.10/login/editUsername">Clickery</a></li>
+            <li><a href="http://44.44.44.10/login/editUserEmail">Clickery</a></li>
+            <li><a href="http://44.44.44.10/login/uploadAvatar">Clickery</a></li>
+            <li><a href="http://44.44.44.10/login/changeAccountType">Clickery</a></li>
+            <li><a href="http://44.44.44.10/login/setNewPassword">Clickery</a></li>
+            <li><a href="http://44.44.44.10/login/showprofile">Clickery</a></li>
+
+        </ul>
+    </div>
 
     
 </div>
