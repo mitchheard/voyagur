@@ -1,18 +1,17 @@
-
-
-
 <div id="container">
   <script>
   $(function() {
     $( "#startdate" ).datepicker();
     $( "#enddate" ).datepicker();
   });
+  function travelChange() {
+    console.log("tryme worked");
+  };
   </script>
 
     <h2>Add a Voyage</h2>
   <form role="form" action="<?php echo URL; ?>on/addvoyage" method="POST">
     
-
     <div class="form-group">
       <label for="inputName">What are the dates of your voyage?</label>
       <input type="text" class="form-control" id="startdate" name ="startdate" placeholder="01/01/2013" required />
@@ -31,8 +30,12 @@
       <input type="text" class="form-control" id="who" name ="who" placeholder="email addresses seperated by comma" required />
     </div>
     <div class="form-group">
-      <label for="inputName">How will you get there?</label>
-      <input type="text" class="form-control" id="when" name ="when" placeholder="Planes, drive, hotel" required />
+      <label for="inputName">How will you get there?</label><br />
+      <select id="travel_type" name="travel_type" onchange="travelChange()">  
+          <?php foreach($travel_types as $a){
+            echo '<option value='.$a["travel_key"].'>'.$a["travel_type"].'</option>';
+          }?>             
+      </select>
     </div>
     <div class="form-group">
       <label for="inputName">Are you celebrating an event or is there theme?</label>
