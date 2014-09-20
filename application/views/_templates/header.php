@@ -70,6 +70,16 @@ require_once "/var/www/html/application/krumo/class.krumo.php";
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
   <!-- our JavaScript -->
   <script src="<?php echo URL; ?>public/js/application.js"></script>
+
+
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+
 </head>
 <body>
 <div class="main">
@@ -85,7 +95,9 @@ require_once "/var/www/html/application/krumo/class.krumo.php";
               <li><a href="<?php echo URL; ?>">Home</a></li>
               <li><a href="<?php echo URL; ?>home/about">About</a></li>
               <li><a href="<?php echo URL; ?>home/news">News</a></li>
-              <li><a href="<?php echo URL; ?>home/contact">Contact</a></li>              
+              <li><a href="<?php echo URL; ?>home/contact">Contact</a></li> 
+
+
             </ul>
 
           </div>
