@@ -73,8 +73,8 @@ class On extends Controller
     {
         $voyage_model = $this->loadModel('VoyageModel');
         $voyages = $voyage_model->getAllVoyages();
-
         $travel_types = $voyage_model->getTravelTypes();
+        $voyage_types = $voyage_model->getVoyageTypes();
 
         require 'application/views/_templates/header.php';
         require 'application/views/on/create.php';

@@ -38,8 +38,12 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="inputName">Are you celebrating an event or is there theme?</label>
-      <input type="text" class="form-control" id="how" name ="how" placeholder="ex: Bachelors Party, Wedding, Reunion" required />
+      <label for="inputName">Are you celebrating an event or is there theme?</label><br />
+      <select id="travel_type" name="travel_type" onchange="travelChange()">  
+          <?php foreach($voyage_types as $a){
+            echo '<option value='.$a["voyage_key"].'>'.$a["short_name"].'</option>';
+          }?>             
+      </select>
     </div>
     <input type="submit" class="btn btn-default" name="submit_add_voyage" value="Create Voyage" />
   </form>

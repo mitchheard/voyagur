@@ -63,7 +63,25 @@ class VoyageModel
         }
         return $trips;
     }
+    public function getVoyageTypes()
+    {
+        $sql = "select * from voyage_type";
+        $query = $this->db->prepare($sql);
+        $query->execute();
 
+        // fetchAll() is the PDO method that gets all result rows, here in object-style because we defined this in
+        // libs/controller.php! If you prefer to get an associative array as the result, then do
+        // $query->fetchAll(PDO::FETCH_ASSOC); or change libs/controller.php's PDO options to
+        // $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC ...
+        $results = $query->fetchAll();
+        $trips =  array();
+        $i = 0;
+        foreach($results as $a) {
+            $trips[$i]["voyage_key"] =$a->voyage_key;
+            $trips[$i++]["short_name"] =$a->short_name;
+        }
+        return $trips;
+    }
     
     public function getVoyagesTravelers($voyage_id)
     {
