@@ -12,22 +12,24 @@
     <h2>Add a Voyage</h2>
   <form role="form" action="<?php echo URL; ?>on/addvoyage" method="POST">
     
+   <div class="form-group">
+      <label for="inputName">What is the name of your Trip?</label>
+      <input type="text" class="form-control" id="name" name ="name" placeholder="ex: Suits and Thai, Austin City Limits, Tays Bachelor" required />
+    </div>
+
     <div class="form-group">
       <label for="inputName">What are the dates of your voyage?</label>
       <input type="text" class="form-control" id="startdate" name ="startdate" placeholder="01/01/2013" required />
       <input type="text" class="form-control" id="enddate" name ="enddate" placeholder="12/01/2013" required />
     </div>
-    <div class="form-group">
-      <label for="inputName">What is the name of your Trip?</label>
-      <input type="text" class="form-control" id="name" name ="name" placeholder="ex: Suits and Thai, Austin City Limits, Tays Bachelor" required />
-    </div>
+
     <div class="form-group">
       <label for="inputName">Where are you going?</label>
-      <input type="text" class="form-control" id="where" name ="where" placeholder="ex: Austin, Vegas, New York" required />
+      <input type="text" class="form-control" id="location" name ="location" placeholder="ex: Austin, Vegas, New York" required />
     </div>
     <div class="form-group">
       <label for="inputName">Who is coming with you?</label>
-      <input type="text" class="form-control" id="who" name ="who" placeholder="email addresses seperated by comma" required />
+      <input type="text" class="form-control" id="travelers" name ="travelers" placeholder="email addresses seperated by comma" required />
     </div>
     <div class="form-group">
       <label for="inputName">How will you get there?</label><br />
@@ -39,7 +41,7 @@
     </div>
     <div class="form-group">
       <label for="inputName">Are you celebrating an event or is there theme?</label><br />
-      <select id="travel_type" name="travel_type" onchange="travelChange()">  
+      <select id="voyage_type" name="voyage_type" onchange="travelChange()">  
           <?php foreach($voyage_types as $a){
             echo '<option value='.$a["voyage_key"].'>'.$a["short_name"].'</option>';
           }?>             

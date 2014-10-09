@@ -88,7 +88,9 @@ class On extends Controller
         if (isset($_POST["submit_add_voyage"])) {
             // load model, perform an action on the model
             $voyage_model = $this->loadModel('VoyageModel');
-            $voyage_model->addVoyage($_POST["name"], $_POST["where"], $_POST["who"],  $_POST["when"],  $_POST["how"],  $_POST["event_type"],  $_POST["leader"], $user_id);
+            
+            $voyage_model->addVoyage($_POST["name"], $_POST["startdate"], $_POST["enddate"], $_POST["location"],  
+                $_POST["travelers"],  $_POST["travel_type"],  $_POST["voyage_type"], $user_id);
         }
 
         $user_id = Session::get('user_id'); 

@@ -21,7 +21,7 @@ class VoyageModel
      */
     public function getAllVoyages()
     {
-        $sql = "select id, name, who, `where`, `when`, how from voyage";
+        $sql = "select id, `name`,`begin_date`, end_date, `location`, who, trip_type, voyage_type from voyage";
 
         $query = $this->db->prepare($sql);
         $query->execute();
@@ -135,20 +135,14 @@ class VoyageModel
      * @param string $track Track
      * @param string $link Link
      */
-    public function addVoyage($name, $where, $who, $when, $how, $event_type, $leader, $created_by)
+    public function addVoyage($name, $startdate, $enddate, $location,  
+                $travelers,  $travel_type,  $voyage_type, $user_id)
     {
         // clean the input from javascript code for example
-        $name = strip_tags($name);
-        $where = strip_tags($where);
-        $who = strip_tags($who);
-        $when = strip_tags($when);
-        $how = strip_tags($how);
-        $event_type = strip_tags($event_type);
-        $leader = strip_tags($leader);
-        $leader = 1;
-
-
-        $sql = "INSERT INTO voyage (`name`,`where`, who, `when`, how, event_type, leader, created_by) VALUES ('$name','$where', '$who', '$when', '$how', '$event_type', '$leader', '$created_by')";
+       
+        $sql = "INSERT INTO voyage (`name`,`begin_date`, end_date, `location`, who, trip_type, voyage_type, created_by) 
+        VALUES ('$name', str_to_date('$startdate', '%m/%d/%Y') , str_to_date('$enddate', '%m/%d/%Y'), '$location', '$travelers', '$travel_type', '$voyage_type', '$user_id')";
+      
        $con=mysqli_connect("localhost","root","root", "voyagur");
   
 
